@@ -6,6 +6,7 @@ This is a simple showcase example of using Configuration Management tools to pro
 *Vagrant* and *Ansible* have been used to provide the Virtual Machine environment and to configure it.
 
 This example will spin up a new Vagrant box (Ubuntu 14.05), and provision it:
+
     1. Install Nginx as the main web server
     2. Collect all guest machine users
     3. Create an appropriate html file containing all the userrs
