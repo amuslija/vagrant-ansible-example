@@ -1,0 +1,4 @@
+---
+static_page_dir: /var/www/public
+static_page_dir_owner: www-data
+static_page_dir_mode: 0775

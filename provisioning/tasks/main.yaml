@@ -1,0 +1,18 @@
+- name: create www directory for the static page
+  file:
+    path: "{{ static_page_dir }}"
+    state: directory
+    owner: "{{ static_page_dir_owner }}"
+    group: "{{ static_page_dir_owner }}"
+    mode: "{{ static_page_dir_mode }}"
+    recurse: yes
+
+- name: list all users
+  shell: cat /etc/passwd | awk -F ':' '{print $1}'
+  register: users
+
+- name: write users to file
+  template:
+    src: templates/index.html.j2
+    dest: "{{ static_page_dir + '/index.html' }}"
+  notify: "restart web server"

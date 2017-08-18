@@ -1,0 +1,14 @@
+<DOCTYPE !html>
+<html>
+  <head>
+    <title>ABH Nginx Example</title>
+  </head>
+  <body>
+    <h1>List of System Users</h1>
+    <ol>
+    {% for user in users.stdout_lines %}
+      <li>{{ user }}</li>
+    {% endfor %}
+    </ol>
+  </body>
+</html>

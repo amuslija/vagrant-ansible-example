@@ -1,0 +1,21 @@
+- name: nginx example setup
+  hosts: abh
+  become: yes
+  become_method: sudo
+  vars_files:
+    - vars/page_vars.yaml
+    - vars/nginx_vars.yaml
+
+  pre_tasks:
+  - name: update apt cache
+    apt:
+      update_cache: yes
+
+  roles:
+    - geerlingguy.nginx
+
+  tasks:
+  - include: tasks/main.yaml
+
+  handlers:
+  - include: handlers/main.yaml
